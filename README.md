@@ -38,29 +38,29 @@ The architecture of this React application follows a standard client-side render
 ```mermaid
 graph TD
     subgraph Client-Side Rendering Workflow
-        A[User Request URL] --> B(Browser Fetches index.html)
-        B -- Links to --> C1(static/css/*.css)
-        B -- Links to --> C2(static/js/runtime-main.*.js)
-        B -- Links to --> C3(static/js/2.*.js)
-        B -- Links to --> C4(static/js/main.*.js)
-        C2 -- Initializes Runtime --> D(Webpack Runtime)
-        D -- Loads & Executes --> E(Main React App Logic: App Component)
-        E -- Renders UI via --> F(React Component Tree)
-        F -- Stylized by --> G(Bundled CSS)
-        F -- Displays Media --> H(static/media/*: Images, SVGs)
-        H -- Assets from --> I(Local/CDN Storage)
-        F -- Interacts with --> J(Application State & Props)
-        J -- Delivers --> K[Interactive User Interface]
+        A["User Request URL"] --> B("Browser Fetches index.html")
+        B -- Links to --> C1("static/css/*.css")
+        B -- Links to --> C2("static/js/runtime-main.*.js")
+        B -- Links to --> C3("static/js/2.*.js")
+        B -- Links to --> C4("static/js/main.*.js")
+        C2 -- Initializes Runtime --> D("Webpack Runtime")
+        D -- Loads & Executes --> E("Main React App Logic: App Component")
+        E -- Renders UI via --> F("React Component Tree")
+        F -- Stylized by --> G("Bundled CSS")
+        F -- Displays Media --> H("static/media/*: Images, SVGs")
+        H -- Assets from --> I("Local/CDN Storage")
+        F -- Interacts with --> J("Application State & Props")
+        J -- Delivers --> K["Interactive User Interface"]
     end
 
     subgraph Build & Deployment Process
-        L[Developer Source Code] -- "npm run build" --> M(Webpack Build Process)
-        M -- Transpiles & Optimizes --> N(Minified JS Chunks)
-        M -- Compiles & Minifies --> O(Optimized CSS Chunks)
-        M -- Processes & Compresses --> P(Optimized Media Assets)
-        M -- Generates --> Q(index.html, manifest.json, asset-manifest.json)
-        Q & N & O & P --> R(Static Build Directory: Root of this Repo)
-        R -- Served via --> S[Web Server / CDN (e.g., Nginx, Apache, GitHub Pages)]
+        L["Developer Source Code"] -- "npm run build" --> M("Webpack Build Process")
+        M -- Transpiles & Optimizes --> N("Minified JS Chunks")
+        M -- Compiles & Minifies --> O("Optimized CSS Chunks")
+        M -- Processes & Compresses --> P("Optimized Media Assets")
+        M -- Generates --> Q("index.html, manifest.json, asset-manifest.json")
+        Q & N & O & P --> R("Static Build Directory: Root of this Repo")
+        R -- Served via --> S["Web Server / CDN (e.g., Nginx, Apache, GitHub Pages)"]
     end
 ```
 
